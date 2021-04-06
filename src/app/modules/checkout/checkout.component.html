@@ -29,7 +29,11 @@
   >
 </nz-result>
 
-<nmo-cart-list [withActions]="false" *ngIf="orderId"></nmo-cart-list>
+<ng-container *ngIf="orderId">
+  <nmo-cart-list [withActions]="false"></nmo-cart-list>
+  <br/>
+  <nmo-order-summary></nmo-order-summary>
+</ng-container>
 
 <ng-template #modalFooter>
   <button nz-button nzType="default" (click)="closeModal()">No</button>
