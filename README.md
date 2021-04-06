@@ -9,6 +9,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Username: demo <br/>
 Password: demo
 
+## Live Demo
+
+Live demo is available at https://zniik.github.io/ta-app
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
