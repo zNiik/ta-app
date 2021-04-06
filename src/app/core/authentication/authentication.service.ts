@@ -19,7 +19,6 @@ export class AuthenticationService {
     return this.http.post('/auth', context)
       .pipe(map((data: any) => {
         this.cookieSvc.set('token', data.token);
-        this.userSvc.setUser(data.user);
         return data;
       }))
   }

@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Input, OnDestroy, OnInit, TemplateRef, ViewContainerRef } from "@angular/core";
+import { Directive, Input, OnDestroy, OnInit, TemplateRef, ViewContainerRef } from "@angular/core";
 import { Subscription } from "rxjs";
 import { UserService } from "src/app/core/authentication/user.service";
 import { User } from "../interfaces/user.interface";
