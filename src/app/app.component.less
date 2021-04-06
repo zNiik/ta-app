@@ -1,0 +1,37 @@
+@import "../assets/less/entry.less";
+
+
+.ant-layout {
+    min-height: 100%;
+}
+
+nz-content {
+
+    &.route-login {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &:not(.route-login) {
+        background-color: @cultured;
+        padding-top: @padding-sm;
+        padding-bottom: @padding-sm;
+
+        @media (min-width: @screen-md-min) {
+            padding-top: @padding-md;
+            padding-bottom: @padding-md;
+        }
+    
+        @media (min-width: @screen-lg-min) {
+            padding-top: @padding-lg;
+            padding-bottom: @padding-lg;
+        }
+    }
+}
+
+nz-footer {
+    color: @davysgrey;
+    font-size: @font-size-sm;
+    font-weight: 500;
+}

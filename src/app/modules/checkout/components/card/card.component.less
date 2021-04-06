@@ -1,0 +1,37 @@
+@import "../../../../../assets/less/entry.less";
+
+.card {
+
+    &-list {
+        display: grid;
+        gap: @margin-sm;
+        grid-auto-flow: column;
+        grid-template-columns: 80px 80px;
+    }
+
+    &-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        padding: @padding-sm;
+        border: 1px solid @gainsboro;
+        position: relative;
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        &.selected {
+            border: 1px solid @primary-color;
+        }
+    }
+
+    &-validation {
+        margin-top: @margin-sm;
+    }
+}

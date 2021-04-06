@@ -1,1 +1,52 @@
-/* You can add global styles to this file, and also import other style files */
+@import "ng-zorro-antd/style/core/index.less";
+
+@import "./assets/less/entry.less";
+@import "./assets/less/patch.less";
+
+@import "ng-zorro-antd/layout/style/entry.less";
+@import "ng-zorro-antd/form/style/entry.less";
+@import "ng-zorro-antd/button/style/entry.less";
+@import "ng-zorro-antd/checkbox/style/entry.less";
+@import "ng-zorro-antd/input/style/entry.less";
+@import "ng-zorro-antd/message/style/entry.less";
+@import "ng-zorro-antd/dropdown/style/entry.less";
+@import "ng-zorro-antd/skeleton/style/entry.less";
+@import "ng-zorro-antd/select/style/entry.less";
+@import "ng-zorro-antd/card/style/entry.less";
+@import "ng-zorro-antd/steps/style/entry.less";
+@import "ng-zorro-antd/typography/style/entry.less";
+@import "ng-zorro-antd/result/style/entry.less";
+@import "ng-zorro-antd/modal/style/entry.less";
+@import "ng-zorro-antd/empty/style/entry.less";
+
+:root {
+    --background-default: @body-bg;
+    --footer-default: @footer-bg;
+    --header-default: @header-bg;
+}
+
+@layout-body-background: var(--background-default);
+@layout-header-background: var(--header-default);
+@layout-footer-background: var(--footer-default);
+
+@layout-header-padding: 0;
+@layout-footer-padding: 24px 0;
+
+body {
+    font-family: 'Montserrat', @font-family;
+}
+
+.container {
+    flex-grow: 1;
+    max-width: 1232px;
+    margin: 0 auto;
+    padding: 0 @padding-sm;
+
+    @media (min-width: @screen-md-min) {
+        padding: 0 @padding-md;
+    }
+
+    @media (min-width: @screen-lg-min) {
+        padding: 0 @padding-lg;
+    }
+}

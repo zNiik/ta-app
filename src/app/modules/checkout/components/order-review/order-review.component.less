@@ -1,0 +1,31 @@
+@import "../../../../../assets/less/entry.less";
+
+.order-review {
+
+    &-container {
+        margin-bottom: @margin-lg;
+
+        &-header {
+            background-color: @white;
+            padding: @padding-sm;
+            border-bottom: 1px solid @card-border;
+
+            > h3 {
+                margin-bottom: 0;
+            }
+    
+            @media (min-width: @screen-md-min) {
+                padding: @padding-md;
+            }
+    
+            @media (min-width: @screen-lg-min) {
+                padding: @padding-md @padding-lg;
+            }
+        }    
+    }
+
+    &-actions {
+        text-align: right;
+        margin-top: @margin-lg;
+    }
+}

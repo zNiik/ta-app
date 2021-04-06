@@ -1,0 +1,49 @@
+<div class="cart-list">
+    <div class="cart-list-header" *ngIf="withActions">
+        <label nz-checkbox [(ngModel)]="allChecked" (ngModelChange)="updateAllChecked()" [nzIndeterminate]="indeterminate" [nzDisabled]="(cart | async)?.loading || (cart | async)?.products!.length === 0">Select all products</label>
+        <a nz-button nzType="link" *ngIf="(indeterminate || allChecked) && !(cart | async)?.loading" (click)="removeSelectedProducts()">Remove {{ indeterminate ? 'selected' : 'all' }} products</a>
+    </div>
+
+    <div class="cart-list-products">
+        <ng-container *ngIf="(cart | async)?.loading; else productsTpl;">
+            <nz-skeleton [nzActive]="true"></nz-skeleton>
+        </ng-container>
+    </div>
+</div>
+
+<ng-template #productsTpl>
+    <ng-container *ngIf="(cart | async)?.products!.length > 0; else noProducts;">
+        <div class="product" *ngFor="let product of (cart | async)?.products; let i = index;" [ngClass]="{'product--compact': !withActions}">
+            <div class="product-content">
+                <label nz-checkbox [(ngModel)]="checkboxes[i]" (ngModelChange)="updateSingleChecked()" *ngIf="withActions"></label>
+    
+                <div class="product-content-image"></div>
+        
+                <div class="product-content-details">
+                    <div class="product-name">{{ product.name }}</div>
+        
+                    <div class="product-price">
+                        <div class="product-price-discounted" *ngIf="product.price.discount">{{ product.price.discount | currency: 'AED ' }}</div>
+                        <div class="product-price-original">{{ product.price.value | currency: 'AED '}}</div>
+                    </div>
+        
+                    <a *ngIf="withActions" (click)="removeProduct(product.id)" class="product-remove">Remove</a>
+                </div>
+            </div>
+                
+            <div class="product-quantity" *ngIf="withActions">
+                Quantity: <nmo-quantity-select [loading]="product.loading" [quantity]="product.quantity" (quantityChange)="onQuantityChange(product.id, $event)"></nmo-quantity-select>
+            </div>
+        </div>
+    </ng-container>
+</ng-template>
+
+<ng-template #noProducts>
+    <nz-empty nzNotFoundImage="simple" [nzNotFoundContent]="contentTpl">
+        <ng-template #contentTpl>
+            No products available in cart <br/>
+            Reset the cart using the button below to continue testing the app. <br/><br/>
+            <button nz-button (click)="resetProducts()">Reset</button>
+        </ng-template>
+    </nz-empty>
+</ng-template>

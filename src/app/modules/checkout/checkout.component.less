@@ -1,0 +1,65 @@
+@import "../../../assets/less/entry.less";
+
+.checkout {
+
+    .btn-back {
+        display: block;
+        font-size: @font-size-sm;
+        margin-bottom: @margin-sm;
+    }
+
+    .ant-steps {
+        margin-bottom: -@margin-sm;
+
+        @media (min-width: @screen-md-min) {
+            margin-bottom: @margin-md;
+            padding: @padding-lg 0;
+        }
+
+        @media (min-width: @screen-lg-min) {
+            margin-bottom: @margin-lg;
+        }
+    }
+
+    &-body {
+
+        .step-container {
+            
+            &-box {
+                background-color: @white;
+                padding: @padding-sm;
+                margin-bottom: @margin-sm;
+            
+                @media (min-width: @screen-md-min) {
+                    padding: @padding-md;
+                    margin-bottom: @margin-md;
+                }
+            
+                @media (min-width: @screen-lg-min) {
+                    padding: @padding-lg;
+                    margin-bottom: 0;
+                }
+            }
+
+            .form {
+
+                .ant-form-item {
+                    label, 
+                    input {
+                        font-size: @font-size-sm;
+                    }
+                }
+
+                &-actions {
+                    text-align: right;
+                }
+            }
+        }
+
+        @media (min-width: @screen-lg-min) {
+            display: grid;
+            gap: @margin-lg;
+            grid-template-columns: 2fr 1fr;
+        }
+    }
+}

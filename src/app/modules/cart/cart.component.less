@@ -1,0 +1,21 @@
+@import "../../../assets/less/entry.less";
+
+.cart {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: @screen-lg-min) {
+        display: grid;
+        flex-direction: unset;
+        gap: @margin-lg;
+        grid-template-columns: 2fr 1fr;
+    }
+
+    nmo-cart-list {
+        margin-bottom: @margin-sm;
+
+        @media (min-width: @screen-lg-min) {
+            margin-bottom: 0;
+        }
+    }
+}

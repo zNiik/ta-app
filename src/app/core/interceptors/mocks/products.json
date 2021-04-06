@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "name": "Apple iPhone 12 Pro with Facetime - 128GB, 5G, Pacific Blue - International Version",
+        "imageUrl": "",
+        "price": {
+            "discount": 3653,
+            "value": 4199
+        },
+        "quantity": {
+            "min": 1,
+            "max": 10,
+            "incrementBy": 1,
+            "selected": 1
+        }
+    },
+    {
+        "id": 2,
+        "name": "Apple MacBook Pro 2020 Model (13-Inch, Apple M1 chip with 8-core CPU and 8-core GPU, 8GB, 256GB, Touch Bar and Touch ID, MYD82 ), Eng-KB, Space Gray",
+        "imageUrl": "",
+        "price": {
+            "discount": 4783,
+            "value": 5399
+        },
+        "quantity": {
+            "min": 1,
+            "max": 5,
+            "incrementBy": 1,
+            "selected": 1
+        }
+    },
+    {
+        "id": 3,
+        "name": "GIGABYTE GeForce RTX 3080 GAMING OC 10G Graphics Card, 3x WINDFORCE Fans, 10GB 320-bit GDDR6X, GV-N3080GAMING OC-10GD Video Card",
+        "imageUrl": "",
+        "price": {
+            "discount": null,
+            "value": 12000
+        },
+        "quantity": {
+            "min": 1,
+            "max": 4,
+            "incrementBy": 1,
+            "selected": 1
+        }
+    }
+]

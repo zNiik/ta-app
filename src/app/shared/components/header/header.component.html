@@ -1,0 +1,22 @@
+<nz-header>
+    <div class="container">
+        <button 
+            nz-button 
+            nz-dropdown 
+            nzType="primary" 
+            nzTrigger="click" 
+            nzShape="circle"
+            nzSize="large"
+            [nzDropdownMenu]="accountMenu">
+            {{ user?.firstName?.charAt(0) }}
+        </button>
+    
+        <nz-dropdown-menu #accountMenu="nzDropdownMenu">
+            <ul nz-menu>
+              <li nz-menu-item nzDisabled>Account</li>
+              <li nz-menu-divider></li>
+              <li nz-menu-item (click)="onLogout()">Logout</li>
+            </ul>
+        </nz-dropdown-menu>
+    </div>
+</nz-header>

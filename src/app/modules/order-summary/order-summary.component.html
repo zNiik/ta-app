@@ -1,0 +1,30 @@
+ <div class="order-summary">
+    <nz-card nzTitle="Order Summary">
+        <nz-skeleton [nzActive]="true" *ngIf="(cart | async)?.loading; else summary;"></nz-skeleton>
+    </nz-card>
+
+    <a *ngIf="currPage === 'cart'" routerLink="/checkout" nz-button [disabled]="(cart | async)?.loading || (cart | async)?.products!.length === 0" nz-button nzSize="large" nzType="primary">Checkout</a>
+</div>
+
+<ng-template #summary>
+    <ng-container *ngIf="(cart | async)?.products!.length > 0; else noSummary;">
+        <div class="order-summary-detail">
+            <label>Sub-total</label>
+            <p>{{ subTotal | currency:'AED ' }}</p>
+        </div>
+    
+        <div class="order-summary-detail">
+            <label>Delivery charges</label>
+            <p>{{ deliveryCharge | currency:'AED ' }}</p>
+        </div>
+    
+        <div class="order-summary-detail">
+            <label>Total</label>
+            <p>{{ getTotalPrice() | currency: 'AED '}}</p>
+        </div>
+    </ng-container>
+</ng-template>
+
+<ng-template #noSummary>
+    <nz-empty nzNotFoundImage="simple"></nz-empty>
+</ng-template>

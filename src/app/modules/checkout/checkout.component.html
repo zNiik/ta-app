@@ -1,0 +1,37 @@
+<div class="checkout">
+  <ng-container *ngIf="!orderId">
+    <a routerLink="/cart" class="btn-back">&lt; Back to Cart</a>
+
+    <nz-steps 
+      [nzCurrent]="stepIndex"
+      [nzSize]="stepDirection === 'horizontal' ? 'default': 'small'" 
+      [nzDirection]="stepDirection">
+        <nz-step nzTitle="Shipping"></nz-step>
+        <nz-step nzTitle="Payment"></nz-step>
+        <nz-step nzTitle="Review & Order"></nz-step>
+    </nz-steps>
+
+    <div class="checkout-body">
+      <div class="step-container">
+        <ng-container #stepContent></ng-container>
+      </div>
+
+      <nmo-order-summary></nmo-order-summary>
+    </div>
+  </ng-container>
+</div>
+
+<nz-result
+    *ngIf="orderId"
+    nzStatus="success"
+    nzTitle="You have successfully placed an order"
+    [nzSubTitle]="'Order number: ' + orderId"
+  >
+</nz-result>
+
+<nmo-cart-list [withActions]="false" *ngIf="orderId"></nmo-cart-list>
+
+<ng-template #modalFooter>
+  <button nz-button nzType="default" (click)="closeModal()">No</button>
+  <button nz-button nzType="primary" (click)="goToCart()">Yes</button>
+</ng-template>

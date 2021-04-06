@@ -1,0 +1,9 @@
+<nz-select 
+    class="quantity-select" 
+    nzNotFoundContent="N/A"
+    [nzDisabled]="loading" 
+    [nzLoading]="loading"
+    [(ngModel)]="selected" 
+    (ngModelChange)="onModelChange($event)">
+    <nz-option *ngFor="let quantity of quantities" [nzValue]="quantity" [nzLabel]="getQuantityLabel(quantity)"></nz-option>
+</nz-select>

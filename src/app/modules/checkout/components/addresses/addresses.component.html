@@ -1,0 +1,58 @@
+<div class="step-container-box">
+  <h2>Address Details</h2>
+
+  <form [formGroup]="form" nz-form nzLayout="vertical" class="form" (ngSubmit)="submitForm()">
+      <nz-form-item>
+          <nz-form-label>Email</nz-form-label>
+          <nz-form-control nzErrorTip="Email is invalid">
+            <input type="text" nz-input formControlName="email" placeholder="youremail@domain.com" />
+          </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+          <nz-form-label>Phone</nz-form-label>
+          <nz-form-control nzErrorTip="Phone is invalid">
+            <input type="text" nz-input formControlName="phone" placeholder="0561234567" />
+          </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+          <nz-form-label>Street</nz-form-label>
+          <nz-form-control nzErrorTip="This field is required!">
+            <input type="text" nz-input formControlName="street" placeholder="Street name" />
+          </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+          <nz-form-label>Building</nz-form-label>
+          <nz-form-control nzErrorTip="This field is required!">
+            <input type="text" nz-input formControlName="building" placeholder="Building name/no., floor, apartment or villa no." />
+          </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+          <nz-form-label>City</nz-form-label>
+          <nz-form-control nzErrorTip="This field is required!">
+            <input type="text" nz-input formControlName="city" placeholder="e.g. Dubai, Abu Dhabi" />
+          </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+          <nz-form-label>Area</nz-form-label>
+          <nz-form-control nzErrorTip="This field is required!">
+            <input type="text" nz-input formControlName="area" placeholder="e.g. Al Barsha 1" />
+          </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+          <nz-form-label>Landmark</nz-form-label>
+          <nz-form-control nzErrorTip="This field is required!">
+            <input type="text" nz-input formControlName="landmark" placeholder="Nearest landmark (Optional)" />
+          </nz-form-control>
+      </nz-form-item>
+
+      <div class="form-actions">
+        <button type="submit" nz-button nzType="primary">Next</button>
+      </div>
+  </form>
+</div>

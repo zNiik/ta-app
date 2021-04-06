@@ -1,0 +1,18 @@
+<form [formGroup]="form" nz-form nzLayout="vertical" class="card">
+    <nz-form-item>
+        <nz-form-label>Card type</nz-form-label>
+        <nz-form-control nzErrorTip="Please select what type of card you're using!">
+            <div class="card-list">
+                <label class="card-box" [ngClass]="{selected: form.get('type')?.value === 'mastercard'}">
+                    <input type="radio" value="mastercard" formControlName="type" />
+                    <img src="assets/svgs/mastercard.svg" alt="mastercard" />
+                </label>
+        
+                <label class="card-box"  [ngClass]="{selected: form.get('type')?.value === 'visa'}">
+                    <input type="radio" value="visa" formControlName="type" />
+                    <img src="assets/svgs/visa.svg" alt="visa" />
+                </label>
+            </div>
+        </nz-form-control>
+    </nz-form-item>
+</form>

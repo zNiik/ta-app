@@ -1,0 +1,36 @@
+<div class="order-review">
+    <div class="order-review-container">
+        <div class="order-review-container-header">
+            <h3>Products</h3>
+        </div>
+        <nmo-cart-list [withActions]="false"></nmo-cart-list>
+    </div>
+
+    <div class="step-container-box">
+        <div>
+            <h3>Ship to</h3>
+            <address>
+                <b>{{ user.firstName }} {{ user.lastName }}</b> <br/>
+                <b>Phone:</b> {{ address.phone }} <br />
+                <b>Email:</b> {{ address.email }} <br />
+                <b>Address:</b> {{ address.building }}, {{ address.street }}, {{ address.area }}, {{ address.city }} <br/>
+                <b *ngIf="address.landmark">Landmark: </b> {{ address.landmark }}
+            </address>
+        </div>
+
+        <div>
+            <h3>Payment details</h3>
+            <div>
+                <b>Card type</b>: {{ card.type }} <br/>
+                <b>Name on card:</b> {{ card.name }} <br/>
+                <b>Card number:</b> {{ maskCard(card.number) }} <br/>
+                <b>CVV:</b> ***
+            </div>
+        </div>
+
+        <div class="order-review-actions">
+            <button type="button" nz-button (click)="back()" [disabled]="loading">Back</button>&nbsp;
+            <button type="submit" nz-button nzType="primary" (click)="placeOrder()" [nzLoading]="loading">Place order</button>
+        </div>
+    </div>
+</div>
